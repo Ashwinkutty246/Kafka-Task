@@ -1,0 +1,17 @@
+zookeeper-server ----------> C:\kafka_2.12-3.5.1>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+Kafka-server --------------> C:\kafka_2.12-3.5.1>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+
+Created topic test --------> C:\kafka_2.12-3.5.1\bin\windows>kafka-topics.bat --create --bootstrap-server localhost:9092 --topic test
+			     Created topic test.
+
+
+Producer ------------------> C:\kafka_2.12-3.5.1\bin\windows>kafka-console-producer.bat --broker-list localhost:9092 --topic test
+			     >{"Name":"hari"}
+
+
+Consumer ------------------> C:\kafka_2.12-3.5.1\bin\windows>kafka-console-consumer.bat --topic test --bootstrap-server localhost:9092 --from-beginning
+			     {"Name":"hari"}
